@@ -1,16 +1,8 @@
-<script>
-function envio(){
-document.formu.submit()
-}
-</script>
-
-<?php
+<?PHP
 	/*error_reporting (0) ;*/
 	error_reporting(E_ALL ^ E_NOTICE);
 	include('conexion.php');
-?>	
 
-<?PHP
 	if (isset($_GET[bcodigo])){$bcodigo=$_GET[bcodigo];}else{$bcodigo="";};
 	if (isset($_GET[bnombre])){$bnombre=$_GET[bnombre];}else{$bnombre="";};
 	if (isset($_GET[bcomple])){$bcomple=$_GET[bcomple];}else{$bcomple="";}; 

@@ -1,5 +1,4 @@
 <?PHP
-session_start();
 error_reporting(E_ALL ^ E_NOTICE); 
 
 include('conexion.php'); ?>
@@ -359,7 +358,7 @@ if ($_GET[fn]=='pf_u'){ //Funcion Modificar Profesionales
 	<?PHP } ?>
 <?PHP } ?>
 
-<!-- Actualizar Contraseña -->
+<!-- Actualizar Contraseï¿½a -->
 <?PHP
 if ($_GET[fn]=='psw_u'){ //Funcion Modificar Profesionales
 	$id=$_GET[id];

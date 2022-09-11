@@ -1,4 +1,4 @@
-<?PHP error_reporting (0); 
+<?PHP session_start();
 include('funciones/login_ctrl.php'); 
 include('funciones/adm_ctrl.php'); ?>
 <!DOCTYPE html>
@@ -251,7 +251,7 @@ include('funciones/adm_ctrl.php'); ?>
 
 	        <!-- Footer -->
 	        <div class="footer clearfix">
-		        <div class="pull-left">&copy; 2018. <a href="#">Mario De los Rios</a></div>
+		        <div class="pull-left">&copy; <script>document.write(new Date().getFullYear());</script> <a href="#">Mario De los Rios</a></div>
 	        </div>
 	        <!-- /footer -->
 

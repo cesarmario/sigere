@@ -1,3 +1,6 @@
+<?PHP 
+session_start();
+include('funciones/login_ctrl.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,10 +10,7 @@
 <title>Control de Cirugias</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<?PHP 
-session_start();
-error_reporting (0); 
-include('funciones/login_ctrl.php'); ?>
+
 <link href="css/londinium-theme.css" rel="stylesheet" type="text/css">
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <link href="css/icons.css" rel="stylesheet" type="text/css">
@@ -242,7 +242,7 @@ include('funciones/login_ctrl.php'); ?>
 
 	        <!-- Footer -->
 	        <div class="footer clearfix">
-		        <div class="pull-left">&copy; 2018. <a href="#">Mario De los Rios</a></div>
+		        <div class="pull-left">&copy; <script>document.write(new Date().getFullYear());</script> <a href="#">Mario De los Rios</a></div>
 	        </div>
 	        <!-- /footer -->
 

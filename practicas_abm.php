@@ -1,3 +1,6 @@
+<?PHP session_start();
+include('funciones/login_ctrl.php'); 
+include('funciones/adm_ctrl.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -54,9 +57,6 @@
 </head>
 
 <body>
-<?PHP error_reporting (0); 
-include('funciones/login_ctrl.php'); 
-include('funciones/adm_ctrl.php'); ?>
 	<!-- Navbar -->
 	<div class="navbar navbar-inverse" role="navigation">
 		<div class="navbar-header">
@@ -284,7 +284,7 @@ include('funciones/adm_ctrl.php'); ?>
 
 	        <!-- Footer -->
 	        <div class="footer clearfix">
-		        <div class="pull-left">&copy; 2018. <a href="#">Mario De los Rios</a></div>
+		        <div class="pull-left">&copy; <script>document.write(new Date().getFullYear());</script> <a href="#">Mario De los Rios</a></div>
 	        </div>
 	        <!-- /footer -->
 

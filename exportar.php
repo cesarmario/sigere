@@ -1,8 +1,5 @@
-<?PHP error_reporting (0); 
-session_start();
-if(!isset($_SESSION['sesion_UserId'])) {?>
-     <script> location.replace("user_login.php"); </script>
-<?PHP } ?>
+<?PHP session_start();
+include('funciones/login_ctrl.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -245,7 +242,7 @@ if(!isset($_SESSION['sesion_UserId'])) {?>
 
 	        <!-- Footer -->
 	        <div class="footer clearfix">
-		        <div class="pull-left">&copy; 2018. <a href="#">Mario De los Rios</a></div>
+		        <div class="pull-left">&copy; <script>document.write(new Date().getFullYear());</script> <a href="#">Mario De los Rios</a></div>
 	        </div>
 	        <!-- /footer -->
 

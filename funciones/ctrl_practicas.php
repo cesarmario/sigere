@@ -1,16 +1,6 @@
-<script>
-function envio(){
-document.formu.submit()
-}
-</script>
-
-<?php
-	/*error_reporting (0) ;*/
+<?PHP
 	error_reporting(E_ALL ^ E_NOTICE);
 	include('conexion.php');
-?>	
-
-<?PHP
 	$query="SELECT
 	practicas_main.*,
 	instituciones.nombre as inom,
