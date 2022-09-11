@@ -1,3 +1,5 @@
+<?PHP session_start();
+include('funciones/login_ctrl.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -54,11 +56,6 @@
 </head>
 
 <body>
-<?PHP error_reporting (0); 
-session_start();
-if(!isset($_SESSION['sesion_UserId'])) {?>
-     <script> location.replace("user_login.php"); </script>
-<?PHP } ?>
 	<!-- Navbar -->
 	<div class="navbar navbar-inverse" role="navigation">
 		<div class="navbar-header">
