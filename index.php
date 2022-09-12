@@ -117,7 +117,7 @@ include('funciones/login_ctrl.php'); ?>
 
 				<!-- Main navigation -->
 				<ul class="navigation">
-					<li class="active"><a href="index.html"><span>Inicio</span> <i class="icon-screen2"></i></a></li>
+					<li class="active"><a href="index.php"><span>Inicio</span> <i class="icon-screen2"></i></a></li>
 					<li>
 						<a href="#"><span>Carga de Datos</span> <i class="icon-insert-template"></i></a>
 						<ul>

@@ -1,7 +1,8 @@
 <?PHP 
 session_start();
 include('funciones/login_ctrl.php'); 
-include('funciones/adm_ctrl.php'); ?>
+//include('funciones/adm_ctrl.php'); 
+include('funciones/ctrl_nomenclador.php'); ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -86,10 +87,8 @@ include('funciones/adm_ctrl.php'); ?>
 	</div>
 	<!-- /navbar -->
 
-
 	<!-- Page container -->
  	<div class="page-container">
-
 
 		<!-- Sidebar -->
 		<div class="sidebar">
@@ -214,16 +213,8 @@ include('funciones/adm_ctrl.php'); ?>
                                             </th>
 				                        </tr>
 				                    </thead>
-                                    <?PHP // include('funciones/conexion.php');                                    
-                            		//$query="SELECT * FROM nomenclador WHERE complejidad > 0 AND baja = 0 limit 30";
-									//$result = mysqli_query($conexion, $query); ?>
-                                    <?PHP /* include('funciones/ctrl_nomenclador.php') */ ?>
-                                    <?PHP /*if ($mostrar=="1"){ */?>
-									<?PHP //while($nn=mysqli_fetch_assoc($result)){?>
-                                    
-                                    <?PHP include('funciones/ctrl_nomenclador.php');
-                                    while($nn=mysqli_fetch_assoc($result)){?>
-                                    <tbody>
+									<tbody>
+                                    <?PHP  	while($nn=mysqli_fetch_assoc($result)) { ?>
                                         <tr>
                                             <td><?PHP echo $nn['codigo'];?></td>
                                             <td><?PHP echo utf8_encode($nn['nombre']); ?></td>
@@ -237,8 +228,8 @@ include('funciones/adm_ctrl.php'); ?>
                                             </td>
                                         </tr>
                                     </tbody>
-                                         <?PHP }?>
-                                      <?PHP /* } */?>
+                                    <?PHP }?>
+
 				                </table>
 			                </div>
 				        </div>

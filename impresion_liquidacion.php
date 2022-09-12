@@ -1,3 +1,8 @@
+<?PHP
+session_start();
+include('funciones/login_ctrl.php'); 
+include('funciones/ctrl_practicas.php');
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -39,9 +44,7 @@ div#bottom{display:none;
 	width: 100%;} /* esto oculta los div cuando imprimes */		
 </style>
 <body>
-<?PHP error_reporting (0); 
-include('funciones/login_ctrl.php'); 
-include('funciones/ctrl_practicas.php');
+<?PHP
 $cantidad = mysqli_num_rows($result);?>
 <div align="center">Liquidaci&oacute;n de 
 <b><?PHP echo $_SESSION['sesion_ProfNom'];?></b> 
