@@ -1,7 +1,8 @@
 <?PHP session_start();
-include('funciones/login_ctrl.php');
 include('funciones/profesionales.php'); 
-?>
+if(!isset($_SESSION['sesion_UserId'])) { ?>
+     <script> location.replace("./login.php"); </script>
+<?PHP } ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -51,7 +52,7 @@ include('funciones/profesionales.php');
 <script type="text/javascript" src="js/application.js"></script>
 
 </head>
-
+<body background="images/fondopro.jpg">
 <body class="full-width page-condensed">
 
 	<!-- Navbar -->
