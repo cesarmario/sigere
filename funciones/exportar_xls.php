@@ -4,14 +4,14 @@ error_reporting (0);
 include('conexion.php'); 
 
 
-$periodo = $_GET[periodo_a] . str_pad($_GET[periodo_a], 2, "0", STR_PAD_LEFT);
+$periodo = $_REQUEST['periodo_a'] . str_pad($_REQUEST['periodo_a'], 2, "0", STR_PAD_LEFT);
 
 
 
-if ($_GET[idbkp]=='1'){
+if ($_REQUEST[idbkp]=='1'){
 $query="SELECT * FROM practicas_main WHERE 
-practicas_main.periodo_a = '$_GET[periodo_a]' AND 
-practicas_main.periodo_m = '$_GET[periodo_m]'";
+practicas_main.periodo_a = '$_REQUEST[periodo_a]' AND 
+practicas_main.periodo_m = '$_REQUEST[periodo_m]'";
 $result = mysqli_query($conexion, $query);
 
 header('Content-type: application/vnd.ms-excel');
@@ -88,12 +88,12 @@ header("Expires: 0");
 	echo "</table>";
 }
 
-if ($_GET[idbkp]=='2'){
+if ($_REQUEST[idbkp]=='2'){
 	/*Exportamos la tabla detalle*/	
 	$query2="SELECT
 	practicas_detalle.*
 	FROM practicas_main,practicas_detalle
-	WHERE practicas_main.periodo_a = '$_GET[periodo_a]' AND practicas_main.periodo_m = '$_GET[periodo_m]' 
+	WHERE practicas_main.periodo_a = '$_REQUEST[periodo_a]' AND practicas_main.periodo_m = '$_REQUEST[periodo_m]' 
 	AND practicas_main.id_bono = practicas_detalle.fk_id_bono";
 	
 	$result2 = mysqli_query($conexion, $query2);

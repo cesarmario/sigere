@@ -1,5 +1,7 @@
 <?PHP session_start();
-include('funciones/login_ctrl.php'); ?>
+if(!isset($_SESSION['sesion_UserId'])) { ?>
+     <script> location.replace("./login.php"); </script>
+<?PHP } ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

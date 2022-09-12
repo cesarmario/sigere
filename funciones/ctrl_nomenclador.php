@@ -3,9 +3,9 @@
 	error_reporting(E_ALL ^ E_NOTICE);
 	include('conexion.php');
 
-	if (isset($_GET[bcodigo])){$bcodigo=$_GET[bcodigo];}else{$bcodigo="";};
-	if (isset($_GET[bnombre])){$bnombre=$_GET[bnombre];}else{$bnombre="";};
-	if (isset($_GET[bcomple])){$bcomple=$_GET[bcomple];}else{$bcomple="";}; 
+	if (isset($_REQUEST['bcodigo'])){$bcodigo=$_REQUEST['bcodigo'];}else{$bcodigo="";};
+	if (isset($_REQUEST['bnombre'])){$bnombre=$_REQUEST['bnombre]';}else{$bnombre="";};
+	if (isset($_REQUEST['bcomple'])){$bcomple=$_REQUEST['bcomple'];}else{$bcomple="";}; 
 	
 	if ($bcodigo=="" and $bnombre=="" and $bcomple==""){
 	$query="SELECT * FROM nomenclador WHERE complejidad > 0 AND baja = 0 limit 30";
@@ -26,7 +26,6 @@
 		if ($bcomple!=""){
 		$query="SELECT * FROM nomenclador WHERE complejidad = '$bcomple' AND baja = 0";
 		$result = mysqli_query($conexion, $query);
-		}
-    
+		}    
 	
 	} ?>

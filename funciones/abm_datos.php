@@ -4,8 +4,8 @@ error_reporting(E_ALL ^ E_NOTICE);
 include('conexion.php'); ?>
 <!-- Funciones Tabla Obras Sociales -->
 <?PHP
-if ($_GET[fn]=='os_a'){ //Funcion Insertar Obra Social
-	$os=$_GET[os];
+if ($_REQUEST['fn']=='os_a'){ //Funcion Insertar Obra Social
+	$os=$_REQUEST['os'];
 	$query="INSERT INTO obras_sociales (`nombre`)VALUES('$os')"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -25,10 +25,10 @@ if ($_GET[fn]=='os_a'){ //Funcion Insertar Obra Social
 <?PHP } ?>
 
 <?PHP
-if ($_GET[fn]=='os_u'){ //Funcion Editar Obra Social
-	$nombre=$_GET[nombre];
-	$id=$_GET[id];
-	if (isset($_GET[baja])){$baja=1;}else{$baja=0;};
+if ($_REQUEST['fn']=='os_u'){ //Funcion Editar Obra Social
+	$nombre=$_REQUEST['nombre'];
+	$id=$_REQUEST['id'];
+	if (isset($_REQUEST['baja]')){$baja=1;}else{$baja=0;};
 	$query="UPDATE obras_sociales SET nombre = '$nombre', baja = '$baja' WHERE id = '$id'"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -49,8 +49,8 @@ if ($_GET[fn]=='os_u'){ //Funcion Editar Obra Social
 
 <!-- Funciones Tabla Coseguro -->
 <?PHP
-if ($_GET[fn]=='cos_a'){ //Funcion Insertar Coseguro
-	$os=$_GET[os];
+if ($_REQUEST['fn']=='cos_a'){ //Funcion Insertar Coseguro
+	$os=$_REQUEST['os'];
 	$query="INSERT INTO coseguros (`nombre`)VALUES('$os')"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -70,10 +70,10 @@ if ($_GET[fn]=='cos_a'){ //Funcion Insertar Coseguro
 <?PHP } ?>
 
 <?PHP
-if ($_GET[fn]=='cos_u'){ //Funcion Editar Coseguro
-	$nombre=$_GET[nombre];
-	$id=$_GET[id];
-	if (isset($_GET[baja])){$baja=1;}else{$baja=0;};
+if ($_REQUEST['fn']=='cos_u'){ //Funcion Editar Coseguro
+	$nombre=$_REQUEST['nombre'];
+	$id=$_REQUEST[id];
+	if (isset($_REQUEST['baja'])){$baja=1;}else{$baja=0;};
 	$query="UPDATE coseguros SET nombre = '$nombre', baja = '$baja' WHERE id = '$id'"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -94,8 +94,8 @@ if ($_GET[fn]=='cos_u'){ //Funcion Editar Coseguro
 
 <!-- Funciones Tabla Instituciones -->
 <?PHP
-if ($_GET[fn]=='inst_a'){ //Funcion Insertar Institucion
-	$os=$_GET[os];
+if ($_REQUEST['fn']=='inst_a'){ //Funcion Insertar Institucion
+	$os=$_REQUEST['os'];
 	$query="INSERT INTO instituciones (`nombre`)VALUES('$os')"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -115,10 +115,10 @@ if ($_GET[fn]=='inst_a'){ //Funcion Insertar Institucion
 <?PHP } ?>
 
 <?PHP
-if ($_GET[fn]=='inst_u'){ //Funcion Editar Institucion
-	$nombre=$_GET[nombre];
-	$id=$_GET[id];
-	if (isset($_GET[baja])){$baja=1;}else{$baja=0;};
+if ($_REQUEST['fn']=='inst_u'){ //Funcion Editar Institucion
+	$nombre=$_REQUEST['nombre'];
+	$id=$_REQUEST[id];
+	if (isset($_REQUEST['baja'])){$baja=1;}else{$baja=0;};
 	$query="UPDATE instituciones SET nombre = '$nombre', baja = '$baja' WHERE id = '$id'"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -139,8 +139,8 @@ if ($_GET[fn]=='inst_u'){ //Funcion Editar Institucion
 
 <!-- Funciones Tabla Nomenclador -->
 <?PHP
-if ($_GET[fn]=='nn_c'){ //Funcion Control Nomenclador
-	$codigo=strtoupper($_GET[codigo]);
+if ($_REQUEST['fn']=='nn_c'){ //Funcion Control Nomenclador
+	$codigo=strtoupper($_REQUEST['codigo']);
 	$query="SELECT * FROM nomenclador WHERE codigo = '$codigo'"; 
     $result = mysqli_query($conexion, $query);
 	$cantidad = mysqli_num_rows($result);
@@ -159,12 +159,12 @@ if ($_GET[fn]=='nn_c'){ //Funcion Control Nomenclador
 <?PHP } ?>
 
 <?PHP
-if ($_GET[fn]=='nn_u'){ //Funcion Editar Nomenclador
-	$id=$_GET[id];
-	$codigo=strtoupper($_GET[codigo]);
-	$nombre=$_GET[nombre];
-	$comple=$_GET[comple];
-	if (isset($_GET[baja])){$baja=1;}else{$baja=0;};
+if ($_REQUEST['fn']=='nn_u'){ //Funcion Editar Nomenclador
+	$id=$_REQUEST[id];
+	$codigo=strtoupper($_REQUEST['codigo']);
+	$nombre=$_REQUEST['nombre'];
+	$comple=$_REQUEST['comple'];
+	if (isset($_REQUEST['baja'])){$baja=1;}else{$baja=0;};
 	$query="UPDATE nomenclador SET nombre = '$nombre',complejidad = '$comple',baja = '$baja' WHERE id = '$id'"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -184,10 +184,10 @@ if ($_GET[fn]=='nn_u'){ //Funcion Editar Nomenclador
 <?PHP } ?>
 
 <?PHP
-if ($_GET[fn]=='nn_a'){ //Funcion Insertar en Nomenclador
-	$codigo=strtoupper($_GET[codigo]);
-	$nombre=strtoupper($_GET[nombre]);
-	$comple=$_GET[comple];
+if ($_REQUEST['fn']=='nn_a'){ //Funcion Insertar en Nomenclador
+	$codigo=strtoupper($_REQUEST['codigo']);
+	$nombre=strtoupper($_REQUEST['nombre']);
+	$comple=$_REQUEST[comple];
 	$query="INSERT INTO nomenclador (`codigo`,`nombre`,`complejidad`,`baja`)VALUES('$codigo','$nombre','$comple','0')"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -208,8 +208,8 @@ if ($_GET[fn]=='nn_a'){ //Funcion Insertar en Nomenclador
 
 <!-- Funciones Tabla Usuarios -->
 <?PHP
-if ($_GET[fn]=='us_c'){ //Funcion Control Usuarios
-	$usuario=$_GET[usuario];
+if ($_REQUEST['fn']=='us_c'){ //Funcion Control Usuarios
+	$usuario=$_REQUEST['usuario'];
 	$query="SELECT * FROM usuarios WHERE usuario = '$usuario'"; 
     $result = mysqli_query($conexion, $query);
 	$cantidad = mysqli_num_rows($result);
@@ -231,9 +231,9 @@ if ($_GET[fn]=='us_c'){ //Funcion Control Usuarios
 
 <!-- Funciones Tabla Usuarios -->
 <?PHP
-if ($_GET[fn]=='us_a'){ //Funcion Insertar Usuarios
-	$us=$_GET[usuario];
-	$mt=$_GET[matricula];
+if ($_REQUEST['fn']=='us_a'){ //Funcion Insertar Usuarios
+	$us=$_REQUEST['usuario'];
+	$mt=$_REQUEST['matricula'];
 	$ps=md5($mt);
 	
 	$query1 = "SELECT * FROM profesionales WHERE matricula = '$mt' ";
@@ -269,11 +269,11 @@ if ($_GET[fn]=='us_a'){ //Funcion Insertar Usuarios
 
 <!-- Funciones Tabla Obras Usuarios -->
 <?PHP
-if ($_GET[fn]=='us_u'){ //Funcion Modificar Usuarios
-	$id=$_GET[id];
-	$us=$_GET[usuario];
-	$nm=$_GET[nombre];
-	$mt=$_GET[matricula];
+if ($_REQUEST['fn']=='us_u'){ //Funcion Modificar Usuarios
+	$id=$_REQUEST['id'];
+	$us=$_REQUEST['usuario'];
+	$nm=$_REQUEST['nombre'];
+	$mt=$_REQUEST['matricula'];
 	$query="UPDATE usuarios SET usuario='$us',nombre='$nm',matricula='$mt' WHERE id='$id'"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -293,8 +293,8 @@ if ($_GET[fn]=='us_u'){ //Funcion Modificar Usuarios
 
 <!-- Funciones Tabla Profesionales-->
 <?PHP
-if ($_GET[fn]=='pf_c'){ //Funcion Control Profesionales
-	$matricula=$_GET[matricula];
+if ($_REQUEST['fn']=='pf_c'){ //Funcion Control Profesionales
+	$matricula=$_REQUEST['matricula'];
 	$query="SELECT * FROM profesionales WHERE matricula = '$matricula'"; 
     $result = mysqli_query($conexion, $query);
 	$cantidad = mysqli_num_rows($result);
@@ -314,9 +314,9 @@ if ($_GET[fn]=='pf_c'){ //Funcion Control Profesionales
 
 <!-- Funciones Tabla Profesionales -->
 <?PHP
-if ($_GET[fn]=='pf_a'){ //Funcion Insertar Profesionales
-	$mt=$_GET[id];
-	$nm=$_GET[nombre];
+if ($_REQUEST['fn']=='pf_a'){ //Funcion Insertar Profesionales
+	$mt=$_REQUEST['id'];
+	$nm=$_REQUEST['nombre'];
 			
 		$query="INSERT INTO profesionales (`matricula`,`nombre`,`baja`)VALUES('$mt','$nm','0')"; 
 		$result = mysqli_query($conexion, $query);
@@ -338,9 +338,9 @@ if ($_GET[fn]=='pf_a'){ //Funcion Insertar Profesionales
 
 <!-- Funciones Tabla Usuarios -->
 <?PHP
-if ($_GET[fn]=='pf_u'){ //Funcion Modificar Profesionales
-	$nm=$_GET[nombre];
-	$mt=$_GET[id];
+if ($_REQUEST['fn']=='pf_u'){ //Funcion Modificar Profesionales
+	$nm=$_REQUEST['nombre'];
+	$mt=$_REQUEST['id'];
 	$query="UPDATE profesionales SET nombre='$nm' WHERE matricula='$mt' "; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -360,10 +360,10 @@ if ($_GET[fn]=='pf_u'){ //Funcion Modificar Profesionales
 
 <!-- Actualizar Contrase�a -->
 <?PHP
-if ($_GET[fn]=='psw_u'){ //Funcion Modificar Profesionales
-	$id=$_GET[id];
-	$us=$_GET[usuario];
-	$psw=$_GET[password];
+if ($_REQUEST['fn']=='psw_u'){ //Funcion Modificar Profesionales
+	$id=$_REQUEST['id'];
+	$us=$_REQUEST['usuario'];
+	$psw=$_REQUEST['password'];
 	
 	$query="UPDATE usuarios SET pass=md5('$psw') WHERE id='$id' "; 
     $result = mysqli_query($conexion, $query);
