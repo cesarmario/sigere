@@ -1,5 +1,6 @@
 <?PHP session_start();
-include('funciones/login_ctrl.php'); 
+include('funciones/login_ctrl.php');
+include('funciones/ctrl_practicas.php');
 include('funciones/adm_ctrl.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -189,7 +190,7 @@ include('funciones/adm_ctrl.php'); ?>
                                             <th>Editar</th>
 				                        </tr>
 				                    </thead>
-                                    <?PHP include('funciones/ctrl_practicas.php');
+                                    <?PHP
                                     while($fac=mysqli_fetch_assoc($result)){?>
 				                    <tbody>
 				                        <tr valign="top">

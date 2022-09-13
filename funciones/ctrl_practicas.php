@@ -1,7 +1,7 @@
 <?PHP
 	error_reporting(E_ALL ^ E_NOTICE);
 	include('conexion.php');
-	$query="SELECT
+	/*$query="SELECT
 	practicas_main.*,
 	instituciones.nombre as inom,
 	obras_sociales.nombre as onom,
@@ -12,6 +12,8 @@
 	AND practicas_main.institucion=instituciones.id
 	AND practicas_main.os=obras_sociales.id
 	AND practicas_main.cos=coseguros.id
-	AND practicas_main.baja_usu = '' ";
+	AND practicas_main.baja_usu = '' "; */
+
+	$query="SELECT * FROM practicas_view WHERE matricula = '$_SESSION[sesion_ProfMat]' AND periodo_a = '$_SESSION[sesion_PeridoA]' AND periodo_m = '$_SESSION[sesion_PeridoM]' AND baja_usu = ''";
 	$result = mysqli_query($conexion, $query);	
 ?>
