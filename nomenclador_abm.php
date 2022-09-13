@@ -179,7 +179,7 @@ include('funciones/adm_ctrl.php'); ?>
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback-left">
 										<input type="text" class="form-control"
-                                        value="<?PHP echo $_GET[codigo];?>" name="codigo" disabled >
+                                        value="<?PHP echo $_REQUEST['codigo'];?>" name="codigo" disabled >
                                         <i class="icon icon-checkmark3 form-control-feedback"></i>
 									</div>
 								</div>
@@ -192,7 +192,7 @@ include('funciones/adm_ctrl.php'); ?>
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback">
 										<input type="text" class="form-control"
-                                        value="<?PHP echo $_GET[nombre];?>" name="nombre" required> 
+                                        value="<?PHP echo $_REQUEST['nombre'];?>" name="nombre" required> 
 									</div>
 								</div>
 							</div>
@@ -204,13 +204,13 @@ include('funciones/adm_ctrl.php'); ?>
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback">
 										<input type="text" class="form-control"
-                                        value="<?PHP echo $_GET[comple];?>" name="comple" required>
+                                        value="<?PHP echo $_REQUEST['comple'];?>" name="comple" required>
 									</div>
 								</div>
 							</div>
 						</div>
                         
-                        <?PHP if ($_GET[fn]=="nn_u"){ ?>
+                        <?PHP if ($_REQUEST['fn']=="nn_u"){ ?>
                         
                         <div class="form-group">
 							<label class="col-sm-2 control-label">Baja: </label>
@@ -227,9 +227,9 @@ include('funciones/adm_ctrl.php'); ?>
                         <div class="form-group">
 							<label class="col-sm-2 control-label"></label>
 							<div class="col-sm-10">
-                            <input type="hidden" id="fn" name="fn" value="<?PHP echo $_GET[fn];?>"/>                            
-                            <input type="hidden" id="cod"  name="codigo"  value="<?PHP echo $_GET[codigo];?>"/>
-                            <input type="hidden" id="id"  name="id"  value="<?PHP echo $_GET[id];?>"/>
+                            <input type="hidden" id="fn" name="fn" value="<?PHP echo $_REQUEST['fn'];?>"/>                            
+                            <input type="hidden" id="cod"  name="codigo"  value="<?PHP echo $_REQUEST['codigo'];?>"/>
+                            <input type="hidden" id="id"  name="id"  value="<?PHP echo $_REQUEST['id'];?>"/>
                             <div class="form-actions text-right">
                             <input type="reset" value="Cancelar" onClick="history.back()" class="btn btn-danger">
                             <input type="submit" value="Guardar" class="btn btn-primary">

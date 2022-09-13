@@ -167,7 +167,7 @@ include('funciones/ctrl_nomenclador.php'); ?>
         	<!-- Form components -->
     		<form class="form-horizontal" role="form" action="funciones/abm_datos.php" method="GET">
             <div class="form-group">
-                <label class="col-sm-2 control-label">Agregar: </label>
+                <label class="col-sm-2 control-label">Nuevo: </label>
                 <div class="col-sm-10">
                     <div class="row">
                         <div class="col-sm-2 has-feedback has-feedback">
@@ -180,7 +180,7 @@ include('funciones/ctrl_nomenclador.php'); ?>
             </div>
             </form>
             
-    		<form class="form-horizontal" role="form" action="nomenclador.php" method="GET">
+    		<form class="form-horizontal" role="form" action="nomenclador.php" method="POST">
 
 			<!-- Questions and contact -->
             <div class="row">
@@ -192,46 +192,8 @@ include('funciones/ctrl_nomenclador.php'); ?>
                     <!-- First tab content -->
                 	<div class="tab-pane active fade in" id="inside">     
                         <!-- Default table -->
-			            <div class="panel panel-default">
-			                <div class="panel-heading"><h6 class="panel-title"><i class="icon-table"></i> Practicas</h6></div>
-			                
-                            <div class="table">
-				                <table class="table">
-				                    <thead>
-				                        <tr>
-				                            <th>C&oacute;digo</th>
-				                            <th>Nombre</th>
-				                            <th>Complejidad</th>
-                                            <th></th>
-				                        </tr>
-                                        <tr>
-				                            <th><input type="text" class="form-control" value="" name="bcodigo"></th>
-				                            <th><input type="text" class="form-control" value="" name="bnombre"></th>
-				                            <th><input type="text" class="form-control" value="" name="bcomple"></th>
-                                            <th>
-                                            	<input type="submit" value="Buscar" class="btn btn-primary">
-                                            </th>
-				                        </tr>
-				                    </thead>
-									<tbody>
-                                    <?PHP  	while($nn=mysqli_fetch_assoc($result)) { ?>
-                                        <tr>
-                                            <td><?PHP echo $nn['codigo'];?></td>
-                                            <td><?PHP echo utf8_encode($nn['nombre']); ?></td>
-                                            <td><?PHP echo $nn['complejidad']; ?></td>
-                                            <td>	
-                                            <div class="table-controls">
-                                                <a href="nomenclador_abm.php?id=<?PHP echo $nn['id'];?>&codigo=<?PHP echo $nn['codigo'];?>&nombre=<?PHP echo utf8_encode($nn['nombre']); ?>&comple=<?PHP echo $nn['complejidad']; ?>&fn=nn_u" 
-                                                class="btn btn-info btn-icon btn-xs tip" title="Editar">
-                                                <i class="icon-pencil"></i></a>
-                                            </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <?PHP }?>
-
-				                </table>
-			                </div>
+			            <div class="panel panel-default">			                		                
+                            <?PHP echo $listadonn; ?>
 				        </div>
 				        <!-- /default table -->
 					</div>
