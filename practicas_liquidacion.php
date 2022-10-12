@@ -178,8 +178,8 @@ include('funciones/adm_ctrl.php'); ?>
 							<div class="col-sm-10">
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback-left">
-                                        <input type="hidden" id="id"  name="id"  value="<?PHP echo $_GET['id'];?>"/>
-										<input type="text" class="form-control" value="<?PHP echo $_GET['id_bono'];?>"
+                                        <input type="hidden" id="id"  name="id"  value="<?PHP echo $_GET[id];?>"/>
+										<input type="text" class="form-control" value="<?PHP echo $_GET[id_bono];?>"
                                          name="id" disabled>
                                         <i class="icon icon-checkmark3 form-control-feedback"></i>
 									</div>
@@ -193,7 +193,7 @@ include('funciones/adm_ctrl.php'); ?>
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback">
 										<input type="text" class="form-control" name="liquidacion_nro" 
-                                        value="<?PHP if($_GET['fn']=="prac_liq_m"){ echo $_GET['liquidacion_nro'];}?>" required>
+                                        value="<?PHP if($_GET[fn]=="prac_liq_m"){ echo $_GET['liquidacion_nro'];}?>" required>
 									</div>
 								</div>
 							</div>
@@ -206,7 +206,7 @@ include('funciones/adm_ctrl.php'); ?>
 									<div class="col-sm-6 has-feedback has-feedback">
 
 										<input type="text" class="form-control" name="liquidacion_imp"
-                                        value="<?PHP if($_GET['fn']=="prac_liq_m"){ echo $_GET['liquidacion_imp'];}?>">
+                                        value="<?PHP if($_GET[fn]=="prac_liq_m"){ echo $_GET['liquidacion_imp'];}?>">
 									</div>
 								</div>
 							</div>
@@ -217,7 +217,7 @@ include('funciones/adm_ctrl.php'); ?>
 							<div class="col-md-2">
                             	<input type="text" class="form-control" data-mask="99/99/9999" 
                                 placeholder="99/99/9999" name="liquidacion_fec"
-                                value="<?PHP if($_GET['fn']=="prac_liq_m"){ echo date('d/m/Y',strtotime($_GET['liquidacion_fec']));}?>">
+                                value="<?PHP if($_GET[fn]=="prac_liq_m"){ echo date('d/m/Y',strtotime($_GET['liquidacion_fec']));}?>">
 							</div>
 						</div>
                         
@@ -225,7 +225,7 @@ include('funciones/adm_ctrl.php'); ?>
 							<label class="col-sm-2 control-label">Observaci&oacute;n: </label>
 							<div class="col-sm-10">
 								<textarea rows="3" cols="3" class="form-control" placeholder="Detalle" 
-                                name="liquidacion_obs"><?PHP if($_GET['fn']=="prac_liq_m"){ echo $_GET['liquidacion_obs'];}?></textarea>
+                                name="liquidacion_obs"><?PHP if($_GET[fn]=="prac_liq_m"){ echo $_GET['liquidacion_obs'];}?></textarea>
 							</div>
 						</div>
                         

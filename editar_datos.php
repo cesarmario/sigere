@@ -177,7 +177,7 @@ include('funciones/adm_ctrl.php'); ?>
 							<div class="col-sm-10">
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback-left">
-										<input type="text" class="form-control" value="<?PHP echo $_GET['id'];?>" name="id" disabled >
+										<input type="text" class="form-control" value="<?PHP echo $_GET[id];?>" name="id" disabled >
                                         <i class="icon icon-checkmark3 form-control-feedback"></i>
 									</div>
 								</div>
@@ -189,8 +189,8 @@ include('funciones/adm_ctrl.php'); ?>
 							<div class="col-sm-10">
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback">
-                                    	<input type="hidden" id="id"  name="id"  value="<?PHP echo $_GET['id'];?>"/>
-										<input type="text" class="form-control" value="<?PHP echo $_GET['nombre'];?>" name="nombre" required>
+                                    	<input type="hidden" id="id"  name="id"  value="<?PHP echo $_GET[id];?>"/>
+										<input type="text" class="form-control" value="<?PHP echo $_GET[nombre];?>" name="nombre" required>
 									</div>
 								</div>
 							</div>
@@ -210,7 +210,7 @@ include('funciones/adm_ctrl.php'); ?>
                         <div class="form-group">
 							<label class="col-sm-2 control-label"></label>
 							<div class="col-sm-10">
-                            <input type="hidden" id="fn" name="fn" value="<?PHP echo $_GET['fn'];?>"/>
+                            <input type="hidden" id="fn" name="fn" value="<?PHP echo $_GET[fn];?>"/>
                             <div class="form-actions text-right">
                             <input type="reset" value="Cancelar" onClick="history.back()" class="btn btn-danger">
                             <input type="submit" value="Guardar" class="btn btn-primary">
