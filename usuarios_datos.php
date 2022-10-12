@@ -213,7 +213,7 @@ include('funciones/adm_ctrl.php'); ?>
                                     </div>
                                 </div>
                             </div>
-                           <?PHP if ($_GET[fn]!='us_a'){ ?>
+                           <?PHP if ($_GET['fn']!='us_a'){ ?>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Baja: </label>
                                 <div class="col-sm-10">
@@ -228,9 +228,9 @@ include('funciones/adm_ctrl.php'); ?>
                             <div class="form-group">
 							<label class="col-sm-2 control-label"></label>
 								<div class="col-sm-10">
-                                	<input type="hidden" id="id" name="id" value="<?PHP echo $_GET[id];?>"/>
-                                	<input type="hidden" id="usuario" name="usuario" value="<?PHP echo $_GET[usuario];?>"/>
-                                    <input type="hidden" id="fn" name="fn" value="<?PHP echo $_GET[fn];?>"/>
+                                	<input type="hidden" id="id" name="id" value="<?PHP echo $_GET['id'];?>"/>
+                                	<input type="hidden" id="usuario" name="usuario" value="<?PHP echo $_GET['usuario'];?>"/>
+                                    <input type="hidden" id="fn" name="fn" value="<?PHP echo $_GET['fn'];?>"/>
                                     <div class="form-actions text-right">
                                     <input type="reset" value="Cancelar" onClick="history.back()" class="btn btn-danger">
                                     <input type="submit" value="Guardar" class="btn btn-primary">

@@ -9,7 +9,7 @@ session_start();
 include('conexion.php'); ?>
 <!-- Funcion corrigue tabla nomenclador -->
 <?PHP
-if ($_GET[fn]=='fix_nn'){ //Funcion Insertar Obra Social
+if ($_GET['fn']=='fix_nn'){ //Funcion Insertar Obra Social
 	$query="UPDATE `nomenclador` SET nombre = REPLACE(nombre,'í','i')"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
