@@ -175,8 +175,8 @@ include('funciones/adm_ctrl.php'); ?>
 							<div class="col-sm-10">
 								<div class="row">
 									<div class="col-sm-2">
-										<input type="text" class="form-control" value="<?PHP echo $_GET[id_bono];?>" name="id_bono" disabled>
-                                        <input type="hidden" id="id_bono"  name="id_bono"  value="<?PHP echo $_GET[id_bono];?>"/>
+										<input type="text" class="form-control" value="<?PHP echo $_REQUEST['id_bono'];?>" name="id_bono" disabled>
+                                        <input type="hidden" id="id_bono"  name="id_bono"  value="<?PHP echo $_REQUEST['id_bono'];?>"/>
 									</div>
 								</div>
 							</div>
@@ -187,7 +187,7 @@ include('funciones/adm_ctrl.php'); ?>
 							<div class="col-sm-10">
 								<div class="row">
 									<div class="col-sm-6">                                    	
-										<input type="text" class="form-control" value="<?PHP echo $_GET[nombre];?>" name="nombre" disabled>
+										<input type="text" class="form-control" value="<?PHP echo $_REQUEST['nombre'];?>" name="nombre" disabled>
 									</div>
 								</div>
 							</div>
@@ -196,7 +196,7 @@ include('funciones/adm_ctrl.php'); ?>
                         <div class="form-group">
 							<label class="col-sm-2 control-label"></label>
 							<div class="col-sm-10">
-                                <input type="hidden" id="fn" name="fn" value="<?PHP echo $_GET[fn];?>"/>
+                                <input type="hidden" id="fn" name="fn" value="<?PHP echo $_REQUEST['fn'];?>"/>
                                 <div class="form-actions text-left">
                                 <input type="reset" value="Cancelar" onClick="history.back()" class="btn btn-danger">
                                 <input type="submit" value="Eliminar" class="btn btn-primary">

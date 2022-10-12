@@ -211,8 +211,8 @@ checkbox:focus {
 								<div class="row">
 									<div class="col-md-2">
 									<input type="text" class="form-control" placeholder="N&uacute;mero de bono"
-                                    value="<?PHP echo $_GET['id_bono']; ?>" name="id_bono" tabindex="1" disabled>
-                                    <input type="hidden" id="id_bono" name="id_bono"  value="<?PHP echo $_GET['id_bono']; ?>"/>
+                                    value="<?PHP echo $_REQUEST['id_bono']; ?>" name="id_bono" tabindex="1" disabled>
+                                    <input type="hidden" id="id_bono" name="id_bono"  value="<?PHP echo $_REQUEST['id_bono']; ?>"/>
 									</div>
 								</div>
 							</div>

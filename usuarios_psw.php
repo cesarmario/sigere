@@ -178,7 +178,7 @@ include('funciones/login_ctrl.php'); ?>
 							<div class="col-sm-4">
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback-left">
-										<input type="text" class="form-control" value="<?PHP echo $_GET[usuario];?>" name="id" disabled >
+										<input type="text" class="form-control" value="<?PHP echo $_REQUEST['usuario'];?>" name="id" disabled >
                                         <i class="icon icon-user form-control-feedback"></i>
 									</div>
 								</div>
@@ -202,8 +202,8 @@ include('funciones/login_ctrl.php'); ?>
 							<div class="col-sm-4">
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback">
-                                    	<input type="hidden" id="usuario"  name="usuario"  value="<?PHP echo $_GET[usuario];?>"/>
-										<input type="hidden" id="id"  name="id"  value="<?PHP echo $_GET[id];?>"/>
+                                    	<input type="hidden" id="usuario"  name="usuario"  value="<?PHP echo $_REQUEST['usuario'];?>"/>
+										<input type="hidden" id="id"  name="id"  value="<?PHP echo $_REQUEST['id'];?>"/>
 										<input type="password"  class="form-control" value="" name="cpassword" id="cpassword"
                                          onKeyUp="this.value=this.value.toUpperCase();"  onChange="pincontrol()" required>
 									</div>

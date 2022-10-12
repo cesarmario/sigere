@@ -181,7 +181,7 @@ include('funciones/adm_ctrl.php'); ?>
 								<div class="row">
 									<div class="col-sm-8 has-feedback has-feedback-left">
 										<input type="text" class="form-control" placeholder="N&uacute;mero de bono"
-                                        value="<?PHP echo $_GET[id_bono];?>" name="id_bono" disabled >
+                                        value="<?PHP echo $_REQUEST['id_bono'];?>" name="id_bono" disabled >
                                         <i class="icon icon-checkmark3 form-control-feedback"></i>
 									</div>
 								</div>
@@ -219,10 +219,10 @@ include('funciones/adm_ctrl.php'); ?>
                         <div class="form-group">
 							<label class="col-sm-2 control-label"></label>
 							<div class="col-sm-10">
-                            <input type="hidden" id="id_bono"  name="id_bono"  value="<?PHP echo $_GET[id_bono];?>"/>
+                            <input type="hidden" id="id_bono"  name="id_bono"  value="<?PHP echo $_REQUEST['id_bono'];?>"/>
                             <input type="hidden" id="fn"       name="fn"       value="prac_det_a"/>
                             <div class="form-actions text-right">
-                            <?PHP if (isset($_GET[mod])){ ?>
+                            <?PHP if (isset($_REQUEST['mod'])){ ?>
                             <input type="reset" value="Cancelar" onClick="location.replace('facturacion.php');" class="btn btn-danger">
                             <?PHP }else{?>
                             <input type="reset" value="Terminar" onClick="location.replace('cirugias.php');" class="btn btn-danger">
@@ -249,7 +249,7 @@ include('funciones/adm_ctrl.php'); ?>
                                     <?PHP include('funciones/conexion.php');                                    
                             		$query2="SELECT practicas_detalle.codigo,practicas_detalle.id,nomenclador.nombre,nomenclador.complejidad,practicas_detalle.porcentaje
 									FROM practicas_detalle,nomenclador
-									WHERE practicas_detalle.fk_id_bono='$_GET[id_bono]' AND matricula='$_SESSION[sesion_ProfMat]' AND
+									WHERE practicas_detalle.fk_id_bono='$_REQUEST[id_bono]' AND matricula='$_SESSION[sesion_ProfMat]' AND
 									practicas_detalle.codigo = nomenclador.codigo AND practicas_detalle.baja_usu = '' "; 
 									$result2 = mysqli_query($conexion, $query2);?>
                                     <?PHP while($prac=mysqli_fetch_assoc($result2)){?>
@@ -261,7 +261,7 @@ include('funciones/adm_ctrl.php'); ?>
                                             <td><?PHP echo $prac['porcentaje']; ?>%</td>
                                             <td>
                                             <div class="table-controls">
-                                                <a href="funciones/abm_practicas.php?id=<?PHP echo $prac['id'];?>&fn=prac_det_b&id_bono=<?PHP echo $_GET[id_bono];?>"
+                                                <a href="funciones/abm_practicas.php?id=<?PHP echo $prac['id'];?>&fn=prac_det_b&id_bono=<?PHP echo $_REQUEST['id_bono'];?>"
                                                 class="btn btn-success btn-icon btn-xs tip">
                                                 <i class="icon-pencil4"></i> Eliminar</a>
                                             </div>

@@ -28,7 +28,7 @@ if ($_REQUEST['fn']=='os_a'){ //Funcion Insertar Obra Social
 if ($_REQUEST['fn']=='os_u'){ //Funcion Editar Obra Social
 	$nombre=$_REQUEST['nombre'];
 	$id=$_REQUEST['id'];
-	if (isset($_REQUEST['baja]')){$baja=1;}else{$baja=0;};
+	if (isset($_REQUEST['baja'])){$baja=1;}else{$baja=0;};
 	$query="UPDATE obras_sociales SET nombre = '$nombre', baja = '$baja' WHERE id = '$id'"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){
@@ -72,7 +72,7 @@ if ($_REQUEST['fn']=='cos_a'){ //Funcion Insertar Coseguro
 <?PHP
 if ($_REQUEST['fn']=='cos_u'){ //Funcion Editar Coseguro
 	$nombre=$_REQUEST['nombre'];
-	$id=$_REQUEST[id];
+	$id=$_REQUEST['id'];
 	if (isset($_REQUEST['baja'])){$baja=1;}else{$baja=0;};
 	$query="UPDATE coseguros SET nombre = '$nombre', baja = '$baja' WHERE id = '$id'"; 
     $result = mysqli_query($conexion, $query);
@@ -117,7 +117,7 @@ if ($_REQUEST['fn']=='inst_a'){ //Funcion Insertar Institucion
 <?PHP
 if ($_REQUEST['fn']=='inst_u'){ //Funcion Editar Institucion
 	$nombre=$_REQUEST['nombre'];
-	$id=$_REQUEST[id];
+	$id=$_REQUEST['id'];
 	if (isset($_REQUEST['baja'])){$baja=1;}else{$baja=0;};
 	$query="UPDATE instituciones SET nombre = '$nombre', baja = '$baja' WHERE id = '$id'"; 
     $result = mysqli_query($conexion, $query);
@@ -160,7 +160,7 @@ if ($_REQUEST['fn']=='nn_c'){ //Funcion Control Nomenclador
 
 <?PHP
 if ($_REQUEST['fn']=='nn_u'){ //Funcion Editar Nomenclador
-	$id=$_REQUEST[id];
+	$id=$_REQUEST['id'];
 	$codigo=strtoupper($_REQUEST['codigo']);
 	$nombre=$_REQUEST['nombre'];
 	$comple=$_REQUEST['comple'];
@@ -187,7 +187,7 @@ if ($_REQUEST['fn']=='nn_u'){ //Funcion Editar Nomenclador
 if ($_REQUEST['fn']=='nn_a'){ //Funcion Insertar en Nomenclador
 	$codigo=strtoupper($_REQUEST['codigo']);
 	$nombre=strtoupper($_REQUEST['nombre']);
-	$comple=$_REQUEST[comple];
+	$comple=$_REQUEST['comple'];
 	$query="INSERT INTO nomenclador (`codigo`,`nombre`,`complejidad`,`baja`)VALUES('$codigo','$nombre','$comple','0')"; 
     $result = mysqli_query($conexion, $query);
     if (mysqli_affected_rows($conexion)>0){

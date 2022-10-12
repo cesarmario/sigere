@@ -8,7 +8,7 @@ $periodo = $_REQUEST['periodo_a'] . str_pad($_REQUEST['periodo_a'], 2, "0", STR_
 
 
 
-if ($_REQUEST[idbkp]=='1'){
+if ($_REQUEST['idbkp']=='1'){
 $query="SELECT * FROM practicas_main WHERE 
 practicas_main.periodo_a = '$_REQUEST[periodo_a]' AND 
 practicas_main.periodo_m = '$_REQUEST[periodo_m]'";
@@ -88,7 +88,7 @@ header("Expires: 0");
 	echo "</table>";
 }
 
-if ($_REQUEST[idbkp]=='2'){
+if ($_REQUEST['idbkp']=='2'){
 	/*Exportamos la tabla detalle*/	
 	$query2="SELECT
 	practicas_detalle.*

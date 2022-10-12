@@ -186,7 +186,7 @@ checkbox:focus {
 				
                 <?PHP
 					include('funciones/conexion.php');
-					$id=$_GET[id];
+					$id=$_REQUEST['id'];
 					$query="SELECT *,
 					instituciones.nombre as inom,
 					obras_sociales.nombre as onom
@@ -298,7 +298,7 @@ checkbox:focus {
 									</label>
 
 									<label class="checkbox-inline checkbox-primary">
-										< 3: <input type="checkbox" class="styled" name="rec_men3" value"rec_men3" tabindex="7"
+										< 3: <input type="checkbox" class="styled" name="rec_men3" value="rec_men3" tabindex="7"
                                         <?PHP if($prac['rec_men3']==1){?> checked <?PHP }; ?>>
 									</label>
     
@@ -333,7 +333,7 @@ checkbox:focus {
 							</div>
 						</div>
                         <input type="hidden" id="fn" name="fn"  value="prac_main_u"/>
-                        <input type="hidden" id="id" name="id"  value="<?PHP echo $_GET[id]; ?>"/>
+                        <input type="hidden" id="id" name="id"  value="<?PHP echo $_REQUEST['id']; ?>"/>
     					<input type="hidden" id="alta_usu" name="alta_usu" value="Admin"/>
 						<div class="form-actions text-right">
                         <input type="reset" value="Cancelar" onClick="location.replace('facturacion.php');" class="btn btn-danger">

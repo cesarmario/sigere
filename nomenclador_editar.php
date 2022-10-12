@@ -177,7 +177,7 @@ include('funciones/login_ctrl.php'); ?>
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback-left">
 										<input type="text" class="form-control"
-                                        value="<?PHP echo $_GET[cod];?>" name="cod" disabled >
+                                        value="<?PHP echo $_REQUEST['cod'];?>" name="cod" disabled >
                                         <i class="icon icon-checkmark3 form-control-feedback"></i>
 									</div>
 								</div>
@@ -190,7 +190,7 @@ include('funciones/login_ctrl.php'); ?>
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback">
 										<input type="text" class="form-control"
-                                        value="<?PHP echo $_GET[nom];?>" name="nom" required> 
+                                        value="<?PHP echo $_REQUEST['nom'];?>" name="nom" required> 
 									</div>
 								</div>
 							</div>
@@ -202,7 +202,7 @@ include('funciones/login_ctrl.php'); ?>
 								<div class="row">
 									<div class="col-sm-6 has-feedback has-feedback">
 										<input type="text" class="form-control"
-                                        value="<?PHP echo $_GET[com];?>" name="com" required>
+                                        value="<?PHP echo $_REQUEST['com'];?>" name="com" required>
 									</div>
 								</div>
 							</div>
@@ -224,8 +224,8 @@ include('funciones/login_ctrl.php'); ?>
 							<div class="col-sm-10">
                             <input type="hidden" id="fn" name="fn" value="nn_u"/>
                             <div class="form-actions text-right">
-                            <input type="hidden" id="cod"  name="cod"  value="<?PHP echo $_GET[cod];?>"/>
-                            <input type="hidden" id="id"  name="id"  value="<?PHP echo $_GET[id];?>"/>
+                            <input type="hidden" id="cod"  name="cod"  value="<?PHP echo $_REQUEST['cod'];?>"/>
+                            <input type="hidden" id="id"  name="id"  value="<?PHP echo $_REQUEST['id'];?>"/>
                             <input type="reset" value="Cancelar" onClick="history.back()" class="btn btn-danger">
                             <input type="submit" value="Editar" class="btn btn-primary">
                             </div>

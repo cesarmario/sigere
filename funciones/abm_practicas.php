@@ -300,7 +300,7 @@ if ($_REQUEST['fn']=='prac_liq_u'){ //Funcion Modificar Liquidacion
 	?>
 		<script>
          /*   alert("Datos cargados correctamente"); */
-			location.replace("../liquidacion.php);
+			location.replace("../liquidacion.php");
         </script>
 
     <?PHP } else {?>

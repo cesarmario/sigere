@@ -173,7 +173,7 @@ include('funciones/adm_ctrl.php'); ?>
                                     <div class="row">
                                         <div class="col-sm-2">
                                             <input type="text" class="form-control" placeholder="Usuario"
-                                            value="<?PHP echo $_GET['usuario'];?>" name="usuario" disabled >
+                                            value="<?PHP echo $_REQUEST['usuario'];?>" name="usuario" disabled >
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@ include('funciones/adm_ctrl.php'); ?>
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <input type="text" class="form-control" placeholder="Nombre"
-                                            value="<?PHP //echo $_GET['nombre'];?>" name="nombre" required >
+                                            value="<?PHP //echo $_REQUEST['nombre'];?>" name="nombre" required >
                                         </div>
                                     </div>
                                 </div>
@@ -201,8 +201,8 @@ include('funciones/adm_ctrl.php'); ?>
                                             $result = mysqli_query($conexion, $query);?>
                                             <select data-placeholder="Seleccione el profesional..." class="select-full"
                                             tabindex="2" name="matricula" required >
-                                                <option selected value="<?PHP if ($_GET['matricula']>0){ echo $_GET['matricula'];} ?>" >
-                                                <?PHP if ($_GET['matricula']>0){ echo $_GET['matricula'] . " " . utf8_encode($_GET['nombre']);} ?>
+                                                <option selected value="<?PHP if ($_REQUEST['matricula']>0){ echo $_REQUEST['matricula'];} ?>" >
+                                                <?PHP if ($_REQUEST['matricula']>0){ echo $_REQUEST['matricula'] . " " . utf8_encode($_REQUEST['nombre']);} ?>
                                                 </option>
                                             <?PHP while($prof=mysqli_fetch_assoc($result)){?>
                                                 <option value="<?PHP echo $prof['matricula']; ?>">
@@ -213,7 +213,7 @@ include('funciones/adm_ctrl.php'); ?>
                                     </div>
                                 </div>
                             </div>
-                           <?PHP if ($_GET[fn]!='us_a'){ ?>
+                           <?PHP if ($_REQUEST['fn']!='us_a'){ ?>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Baja: </label>
                                 <div class="col-sm-10">
@@ -228,9 +228,9 @@ include('funciones/adm_ctrl.php'); ?>
                             <div class="form-group">
 							<label class="col-sm-2 control-label"></label>
 								<div class="col-sm-10">
-                                	<input type="hidden" id="id" name="id" value="<?PHP echo $_GET[id];?>"/>
-                                	<input type="hidden" id="usuario" name="usuario" value="<?PHP echo $_GET[usuario];?>"/>
-                                    <input type="hidden" id="fn" name="fn" value="<?PHP echo $_GET[fn];?>"/>
+                                	<input type="hidden" id="id" name="id" value="<?PHP echo $_REQUEST['id'];?>"/>
+                                	<input type="hidden" id="usuario" name="usuario" value="<?PHP echo $_REQUEST['usuario'];?>"/>
+                                    <input type="hidden" id="fn" name="fn" value="<?PHP echo $_REQUEST['fn'];?>"/>
                                     <div class="form-actions text-right">
                                     <input type="reset" value="Cancelar" onClick="history.back()" class="btn btn-danger">
                                     <input type="submit" value="Guardar" class="btn btn-primary">
