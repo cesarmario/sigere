@@ -1,4 +1,5 @@
 <?PHP
+session_start();
 include('conexion.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -9,6 +10,7 @@ $actual = date("Y-m-d H:i:s");
 <!-- Funciones Control Bono-->
 <?PHP
 //if (isset($_REQUEST['fn'])) $fn=$_REQUEST['fn'];
+
 
 if ($_REQUEST['fn']=='prac_main_c'){ //Funcion Control Nomenclador
 	$id_bono=$_REQUEST['id_bono'];
@@ -33,94 +35,107 @@ if ($_REQUEST['fn']=='prac_main_c'){ //Funcion Control Nomenclador
 
 <?PHP 
 if ($_REQUEST['fn']=='prac_main_a'){ //Funcion Insertar cirugias
-	if (isset($_REQUEST['rec_mas65'])){$var_rec_mas65=1;}else{$var_rec_mas65=0;};
-	if (isset($_REQUEST['rec_men3'])) {$var_rec_men3=1;} else{$var_rec_men3=0;};
-	if (isset($_REQUEST['rec_urg']))  {$var_rec_urg=1;}  else{$var_rec_urg=0;};
-	if (isset($_REQUEST['rec_fds']))  {$var_rec_fds=1;}  else{$var_rec_fds=0;};
-	if (isset($_REQUEST['rec_fer']))  {$var_rec_fer=1;}  else{$var_rec_fer=0;};
-	if (isset($_REQUEST['rec_noc']))  {$var_rec_noc=1;}  else{$var_rec_noc=0;};
-	$id_bono =$_REQUEST['id_bono'];
-	//$fecha = date('Y-m-d',strtotime($_REQUEST[fecha]));
-	
-	$fecha = str_replace("/", "-", $_REQUEST['fecha']);
-	$fecha = date("Y-m-d",strtotime($fecha));
-	$query="INSERT INTO practicas_main (
-	`matricula`,
-	`periodo_a`,
-	`periodo_m`,
-	`id_bono`,
-	`fecha`,
-	`dni`,
-	`paciente`,
-	`institucion`,
-	`os`,
-	`cos`,
-	`rec_mas65`,
-	`rec_men3`,
-	`rec_urg`,
-	`rec_fds`,
-	`rec_fer`,
-	`rec_noc`,
-	`observ`,
-	`cobrado`,
-	`alta_fec`,
-	`alta_usu`
-	)VALUES(
-	'$_SESSION[sesion_ProfMat]',
-	'$_SESSION[sesion_PeridoA]',
-	'$_SESSION[sesion_PeridoM]',
-	'$id_bono',
-	'$fecha',
-	'$_REQUEST[dni]',
-	'$_REQUEST[paciente]',
-	'$_REQUEST[institucion]',
-	'$_REQUEST[os]',
-	'$_REQUEST[cos]',
-	'$var_rec_mas65',
-	'$var_rec_men3',
-	'$var_rec_urg',
-	'$var_rec_fds',
-	'$var_rec_fer',
-	'$var_rec_noc',
-	'$_REQUEST[observ]',
-	'0',
-	'$actual',
-	'$_SESSION[sesion_UserId]')"; 
-    $result = mysqli_query($conexion, $query);
-    if (mysqli_affected_rows($conexion)>0){
-	?>
+
+
+	if (!isset($_SESSION['sesion_ProfMat']) or !isset($_SESSION['sesion_PeridoA']) or !isset($_SESSION['sesion_PeridoM'])){ ?>
+
 		<script>
-          location.replace("../practicas_abm.php?id_bono=<?PHP echo $id_bono?>");
+            alert("Ocurrio un error!");
+			window.history.back();
         </script>
+
+	<?PHP } else {  
 		
-    <?PHP } else {
-		echo $_SESSION['sesion_ProfMat'] . '<br>'; 
-		echo $_SESSION['sesion_PeridoA'] . '<br>';
-		echo $_SESSION['sesion_PeridoM'] . '<br>';
-		echo $id_bono . '<br>';
-		echo $fecha . '<br>';
-		echo $_REQUEST['dni'] . '<br>';
-		echo $_REQUEST['paciente'] . '<br>';
-		echo $_REQUEST['institucion'] . '<br>';
-		echo $_REQUEST['os'] . '<br>';
-		echo $_REQUEST['cos'] . '<br>';
-		echo $var_rec_mas65 . '<br>';
-		echo $var_rec_men3 . '<br>';
-		echo $var_rec_urg . '<br>';
-		echo $var_rec_fds . '<br>';
-		echo $var_rec_fer . '<br>';
-		echo $var_rec_noc . '<br>';
-		echo $_REQUEST['observ'] . '<br>';
-		echo $actual . '<br>';
-		echo $_SESSION['sesion_UserId'] . '<br>';
+		if (isset($_REQUEST['rec_mas65'])){$var_rec_mas65=1;}else{$var_rec_mas65=0;};
+		if (isset($_REQUEST['rec_men3'])) {$var_rec_men3=1;} else{$var_rec_men3=0;};
+		if (isset($_REQUEST['rec_urg']))  {$var_rec_urg=1;}  else{$var_rec_urg=0;};
+		if (isset($_REQUEST['rec_fds']))  {$var_rec_fds=1;}  else{$var_rec_fds=0;};
+		if (isset($_REQUEST['rec_fer']))  {$var_rec_fer=1;}  else{$var_rec_fer=0;};
+		if (isset($_REQUEST['rec_noc']))  {$var_rec_noc=1;}  else{$var_rec_noc=0;};
+		$id_bono =$_REQUEST['id_bono'];
+		//$fecha = date('Y-m-d',strtotime($_REQUEST[fecha]));
+		
+		$fecha = str_replace("/", "-", $_REQUEST['fecha']);
+		$fecha = date("Y-m-d",strtotime($fecha));
+		$query="INSERT INTO practicas_main (
+		`matricula`,
+		`periodo_a`,
+		`periodo_m`,
+		`id_bono`,
+		`fecha`,
+		`dni`,
+		`paciente`,
+		`institucion`,
+		`os`,
+		`cos`,
+		`rec_mas65`,
+		`rec_men3`,
+		`rec_urg`,
+		`rec_fds`,
+		`rec_fer`,
+		`rec_noc`,
+		`observ`,
+		`cobrado`,
+		`alta_fec`,
+		`alta_usu`
+		)VALUES(
+		'$_SESSION[sesion_ProfMat]',
+		'$_SESSION[sesion_PeridoA]',
+		'$_SESSION[sesion_PeridoM]',
+		'$id_bono',
+		'$fecha',
+		'$_REQUEST[dni]',
+		'$_REQUEST[paciente]',
+		'$_REQUEST[institucion]',
+		'$_REQUEST[os]',
+		'$_REQUEST[cos]',
+		'$var_rec_mas65',
+		'$var_rec_men3',
+		'$var_rec_urg',
+		'$var_rec_fds',
+		'$var_rec_fer',
+		'$var_rec_noc',
+		'$_REQUEST[observ]',
+		'0',
+		'$actual',
+		'$_SESSION[sesion_UserId]')"; 
+		$result = mysqli_query($conexion, $query);
+		if (mysqli_affected_rows($conexion)>0){
 		?>
-		<script>
-            alert("Ocurrio un Error a guardar en la Base de Datos!!");
-            //location.replace("index.php");
-        </script>
-        <input type ='button' value = 'Volver' onClick="location.replace('../cirugias.php');" class="button"/>
+			<script>
+			location.replace("../practicas_abm.php?id_bono=<?PHP echo $id_bono?>");
+			</script>
+			
+		<?PHP } else {
+			echo $_SESSION['sesion_ProfMat'] . '<br>'; 
+			echo $_SESSION['sesion_PeridoA'] . '<br>';
+			echo $_SESSION['sesion_PeridoM'] . '<br>';
+			echo $id_bono . '<br>';
+			echo $fecha . '<br>';
+			echo $_REQUEST['dni'] . '<br>';
+			echo $_REQUEST['paciente'] . '<br>';
+			echo $_REQUEST['institucion'] . '<br>';
+			echo $_REQUEST['os'] . '<br>';
+			echo $_REQUEST['cos'] . '<br>';
+			echo $var_rec_mas65 . '<br>';
+			echo $var_rec_men3 . '<br>';
+			echo $var_rec_urg . '<br>';
+			echo $var_rec_fds . '<br>';
+			echo $var_rec_fer . '<br>';
+			echo $var_rec_noc . '<br>';
+			echo $_REQUEST['observ'] . '<br>';
+			echo $actual . '<br>';
+			echo $_SESSION['sesion_UserId'] . '<br>';
+			?>
+			<script>
+				alert("Ocurrio un Error a guardar en la Base de Datos!!");
+				//location.replace("index.php");
+			</script>
+			<input type ='button' value = 'Volver' onClick="location.replace('../cirugias.php');" class="button"/>
+		<?PHP }; ?>
 	<?PHP }; ?>
 <?PHP }; 
+
 /********************************************************************************************/
 ?>
 
