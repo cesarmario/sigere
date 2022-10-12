@@ -1,4 +1,4 @@
-<?PHP session_start();
+<?PHP
 	include('conexion.php');
 	
 if ($_GET['fn']=='periodo_s'){ //Funcion Seleccionar Periodo

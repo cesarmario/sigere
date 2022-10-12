@@ -1,5 +1,4 @@
-<?PHP 
-session_start();
+<?PHP
 error_reporting(E_ALL ^ E_NOTICE);
 include('conexion.php'); 
 $matricula = $_POST['matricula'];

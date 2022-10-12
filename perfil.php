@@ -1,4 +1,5 @@
-<?PHP error_reporting (0); 
+<?PHP session_start();
+error_reporting (0); 
 include('funciones/login_ctrl.php'); ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -1,3 +1,7 @@
+<?PHP 
+session_start();
+error_reporting (0); 
+include('funciones/login_ctrl.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -54,8 +58,6 @@
 </head>
 
 <body>
-<?PHP error_reporting (0); 
-include('funciones/login_ctrl.php'); ?>
 	<!-- Navbar -->
 	<div class="navbar navbar-inverse" role="navigation">
 		<div class="navbar-header">
