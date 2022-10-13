@@ -1,4 +1,5 @@
 <?PHP
+	session_start();
 	error_reporting(E_ALL ^ E_NOTICE);
 	include('conexion.php');
 	/*$query="SELECT
