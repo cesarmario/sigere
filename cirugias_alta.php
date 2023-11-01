@@ -1,75 +1,78 @@
 <?PHP session_start();
-include('funciones/login_ctrl.php'); 
+include('funciones/login_ctrl.php');
 include('funciones/adm_ctrl.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>Control de Cirugias</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<title>Control de Cirugias</title>
 
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/londinium-theme.css" rel="stylesheet" type="text/css">
-<link href="css/styles.css" rel="stylesheet" type="text/css">
-<link href="css/icons.css" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/londinium-theme.css" rel="stylesheet" type="text/css">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<link href="css/icons.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 
-<script type="text/javascript" src="js/plugins/charts/sparkline.min.js"></script>
+	<script type="text/javascript" src="js/plugins/charts/sparkline.min.js"></script>
 
-<script type="text/javascript" src="js/plugins/forms/uniform.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/select2.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/inputmask.js"></script>
-<script type="text/javascript" src="js/plugins/forms/autosize.js"></script>
-<script type="text/javascript" src="js/plugins/forms/inputlimit.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/listbox.js"></script>
-<script type="text/javascript" src="js/plugins/forms/multiselect.js"></script>
-<script type="text/javascript" src="js/plugins/forms/validate.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/tags.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/switch.min.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/uniform.min.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/select2.min.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/inputmask.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/autosize.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/inputlimit.min.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/listbox.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/multiselect.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/validate.min.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/tags.min.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/switch.min.js"></script>
 
-<script type="text/javascript" src="js/plugins/forms/uploader/plupload.full.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/uploader/plupload.queue.min.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/uploader/plupload.full.min.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/uploader/plupload.queue.min.js"></script>
 
-<script type="text/javascript" src="js/plugins/forms/wysihtml5/wysihtml5.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/wysihtml5/toolbar.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/wysihtml5/wysihtml5.min.js"></script>
+	<script type="text/javascript" src="js/plugins/forms/wysihtml5/toolbar.js"></script>
 
-<script type="text/javascript" src="js/globalize/globalize.js"></script>
-<script type="text/javascript" src="js/globalize/globalize.culture.de-DE.js"></script>
-<script type="text/javascript" src="js/globalize/globalize.culture.ja-JP.js"></script>
+	<script type="text/javascript" src="js/globalize/globalize.js"></script>
+	<script type="text/javascript" src="js/globalize/globalize.culture.de-DE.js"></script>
+	<script type="text/javascript" src="js/globalize/globalize.culture.ja-JP.js"></script>
 
-<script type="text/javascript" src="js/plugins/interface/daterangepicker.js"></script>
-<script type="text/javascript" src="js/plugins/interface/fancybox.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/moment.js"></script>
-<script type="text/javascript" src="js/plugins/interface/mousewheel.js"></script>
-<script type="text/javascript" src="js/plugins/interface/jgrowl.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/datatables.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/colorpicker.js"></script>
-<script type="text/javascript" src="js/plugins/interface/fullcalendar.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/timepicker.min.js"></script>
+	<script type="text/javascript" src="js/plugins/interface/daterangepicker.js"></script>
+	<script type="text/javascript" src="js/plugins/interface/fancybox.min.js"></script>
+	<script type="text/javascript" src="js/plugins/interface/moment.js"></script>
+	<script type="text/javascript" src="js/plugins/interface/mousewheel.js"></script>
+	<script type="text/javascript" src="js/plugins/interface/jgrowl.min.js"></script>
+	<script type="text/javascript" src="js/plugins/interface/datatables.min.js"></script>
+	<script type="text/javascript" src="js/plugins/interface/colorpicker.js"></script>
+	<script type="text/javascript" src="js/plugins/interface/fullcalendar.min.js"></script>
+	<script type="text/javascript" src="js/plugins/interface/timepicker.min.js"></script>
 
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
 
 </head>
 <style>
-input:focus {
-   border: 2px solid #000;
-   background: #F3F3F3;
-}
+	input:focus {
+		border: 2px solid #000;
+		background: #F3F3F3;
+	}
 
-select:focus {
-   border: 2px solid #000;
-   background: #F3F3F3;
-}
-checkbox:focus {
-   border: 2px solid #000;
-   background: #F3F3F3;
-}
+	select:focus {
+		border: 2px solid #000;
+		background: #F3F3F3;
+	}
+
+	checkbox:focus {
+		border: 2px solid #000;
+		background: #F3F3F3;
+	}
 </style>
+
 <body>
 	<!-- Navbar -->
 	<div class="navbar navbar-inverse" role="navigation">
@@ -85,21 +88,21 @@ checkbox:focus {
 				<i class="icon-paragraph-justify2"></i>
 			</button>
 		</div>
-        
-        <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+
+		<ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown">
 					<i class="icon-calendar"></i>
-					<span class="label label-default"><?PHP echo $_SESSION['sesion_PeridoM'];?></span>&nbsp;
-					<span class="label label-default"><?PHP echo $_SESSION['sesion_PeridoA'];?></span>
+					<span class="label label-default"><?PHP echo $_SESSION['sesion_PeridoM']; ?></span>&nbsp;
+					<span class="label label-default"><?PHP echo $_SESSION['sesion_PeridoA']; ?></span>
 				</a>
-           	</li>
+			</li>
 		</ul>
 	</div>
 	<!-- /navbar -->
 
 	<!-- Page container -->
- 	<div class="page-container">
+	<div class="page-container">
 
 
 		<!-- Sidebar -->
@@ -111,20 +114,20 @@ checkbox:focus {
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<img src="images/users/user.png" alt="">
 						<div class="user-info">
-							<?PHP echo $_SESSION['sesion_UserNom'];?> <span><?PHP echo $_SESSION['sesion_ProfNom'];?></span>
+							<?PHP echo $_SESSION['sesion_UserNom']; ?> <span><?PHP echo $_SESSION['sesion_ProfNom']; ?></span>
 						</div>
 					</a>
 					<div class="popup dropdown-menu dropdown-menu-right">
-                        <div class="thumbnail">
-                            <div class="caption text-center">
-                                <h6><?PHP echo $_SESSION['sesion_ProfNom'];?> <small>Matricula: <?PHP echo $_SESSION['sesion_ProfMat'];?></small></h6>                                
-                            </div>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item"><a href="perfil.php"><i class="icon-user"></i> Perfil</a></li>
-                            <li class="list-group-item"><a href="funciones/logout.php"><i class="icon-exit"></i> Cerrar Sesion</a></li>
-                        </ul>
-                    </div>
+						<div class="thumbnail">
+							<div class="caption text-center">
+								<h6><?PHP echo $_SESSION['sesion_ProfNom']; ?> <small>Matricula: <?PHP echo $_SESSION['sesion_ProfMat']; ?></small></h6>
+							</div>
+						</div>
+						<ul class="list-group">
+							<li class="list-group-item"><a href="perfil.php"><i class="icon-user"></i> Perfil</a></li>
+							<li class="list-group-item"><a href="funciones/logout.php"><i class="icon-exit"></i> Cerrar Sesion</a></li>
+						</ul>
+					</div>
 				</div>
 				<!-- /user dropdown -->
 
@@ -134,35 +137,35 @@ checkbox:focus {
 					<li>
 						<a href="#"><span>Carga de Datos</span> <i class="icon-list"></i></a>
 						<ul>
-                        	<li><a href="periodos.php">Periodos</a></li>
+							<li><a href="periodos.php">Periodos</a></li>
 							<li><a href="#">Cirugia</a></li>
-                            <ul>
-                            	<li class="active"><a href="#">&nbsp;&nbsp;Carga</a></li>
-                            </ul>
+							<ul>
+								<li class="active"><a href="#">&nbsp;&nbsp;Carga</a></li>
+							</ul>
 							<li><a href="instituciones.php">Instituciones</a></li>
 							<li><a href="obras_sociales.php">Obras Sociales</a></li>
-                            <li><a href="coseguros.php">Coseguros</a></li>
-                            <li><a href="nomenclador.php">Nomenclador</a></li>
+							<li><a href="coseguros.php">Coseguros</a></li>
+							<li><a href="nomenclador.php">Nomenclador</a></li>
 						</ul>
 					</li>
-                    <li>
+					<li>
 						<a href="#"><span>Control de Datos</span> <i class="icon-table"></i></a>
 						<ul>
-                        	<li><a href="facturacion.php">Facturacion</a></li>
-                            <li><a href="impresion.php">Impresion</a></li>
-                            <li><a href="liquidacion.php">Liquidacion</a></li>
+							<li><a href="facturacion.php">Facturacion</a></li>
+							<li><a href="impresion.php">Impresion</a></li>
+							<li><a href="liquidacion.php">Liquidacion</a></li>
 							<li><a href="busqueda.php">Busqueda</a></li>
-                        </ul>
-                    </li>
-                    <?PHP if($_SESSION['sesion_UserAdm']==1){?>
-                    <li>
-						<a href="#"><span>Administrar</span> <i class="icon-settings"></i></a>
-						<ul>
-                        	<li><a href="usuarios.php">Usuarios</a></li>
-                            <li><a href="profesionales.php">Profesionales</a></li>
-                        </ul>
-                    </li>
-                    <?PHP }?>
+						</ul>
+					</li>
+					<?PHP if ($_SESSION['sesion_UserAdm'] == 1) { ?>
+						<li>
+							<a href="#"><span>Administrar</span> <i class="icon-settings"></i></a>
+							<ul>
+								<li><a href="usuarios.php">Usuarios</a></li>
+								<li><a href="profesionales.php">Profesionales</a></li>
+							</ul>
+						</li>
+					<?PHP } ?>
 				</ul>
 				<!-- /main navigation -->
 			</div>
@@ -170,7 +173,7 @@ checkbox:focus {
 		<!-- /sidebar -->
 
 		<!-- Page content -->
-	 	<div class="page-content">
+		<div class="page-content">
 
 			<!-- Page header -->
 			<div class="page-header">
@@ -180,126 +183,122 @@ checkbox:focus {
 			</div>
 			<!-- /page header -->
 
-        	<!-- Form components -->
-    		<form class="form-horizontal" role="form" action="funciones/abm_practicas.php" method="GET">
+			<!-- Form components -->
+			<form class="form-horizontal" role="form" action="funciones/abm_practicas.php" method="GET">
 
 				<!-- Basic inputs -->
-		        <div class="panel panel-default">
-			        <div class="panel-heading"><h6 class="panel-title"><i class="icon-bubble4"></i>Datos principales de la practica</h6></div>
-	                <div class="panel-body">
-                         
-                        <div class="form-group">
-									<label class="col-sm-2 control-label">Periodo: </label>
-									<div class="col-sm-10">
-		                                <select class="multi-select" name="periodo_m" disabled>
-		                                    <option selected value="<?PHP echo $_SESSION['sesion_PeridoM'];?>">
-											<?PHP echo $_SESSION['sesion_PeridoM'];?>
-                                            </option> 
-		                                </select>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h6 class="panel-title"><i class="icon-bubble4"></i>Datos principales de la practica</h6>
+					</div>
+					<div class="panel-body">
 
-                                        <select class="multi-select" name="periodo_a" disabled>
-		                                    <option selected value="<?PHP echo $_SESSION['sesion_PeridoA'];?>">
-											<?PHP echo $_SESSION['sesion_PeridoA'];?>
-                                            </option>  
-		                                </select>
-									</div>
-								</div>
-                        
-                        <div class="form-group">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Periodo: </label>
+							<div class="col-sm-10">
+								<select class="multi-select" name="periodo_m" disabled>
+									<option selected value="<?PHP echo $_SESSION['sesion_PeridoM']; ?>">
+										<?PHP echo $_SESSION['sesion_PeridoM']; ?>
+									</option>
+								</select>
+
+								<select class="multi-select" name="periodo_a" disabled>
+									<option selected value="<?PHP echo $_SESSION['sesion_PeridoA']; ?>">
+										<?PHP echo $_SESSION['sesion_PeridoA']; ?>
+									</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
 							<label class="col-sm-2 control-label">N&uacute;mero de bono: </label>
 							<div class="col-sm-10">
 								<div class="row">
 									<div class="col-md-2">
-									<input type="text" class="form-control" placeholder="N&uacute;mero de bono"
-                                    value="<?PHP echo $_REQUEST['id_bono']; ?>" name="id_bono" tabindex="1" disabled>
-                                    <input type="hidden" id="id_bono" name="id_bono"  value="<?PHP echo $_REQUEST['id_bono']; ?>"/>
+										<input type="text" class="form-control" placeholder="N&uacute;mero de bono" value="<?PHP echo $_REQUEST['id_bono']; ?>" name="id_bono" tabindex="1" disabled>
+										<input type="hidden" id="id_bono" name="id_bono" value="<?PHP echo $_REQUEST['id_bono']; ?>" />
 									</div>
 								</div>
 							</div>
 						</div>
-						                        
-                        <div class="form-group">
+
+						<div class="form-group">
 							<label class="col-sm-2 control-label">Fecha de la cirugia: </label>
 							<div class="col-md-2">
-                            	<input type="text" class="form-control" data-mask="99/99/9999" placeholder="99/99/9999" id="fecha" name="fecha" tabindex="2" required>
+								<input type="text" class="form-control" data-mask="99/99/9999" placeholder="99/99/9999" id="fecha" name="fecha" tabindex="2" required>
 							</div>
 						</div>
-                        
-                        <div class="form-group">
-                           <label class="col-sm-2 control-label">Instituci&oacute;n: </label>
-                           <div class="col-md-3">
-                            <?PHP include('funciones/conexion.php');                                    
-                            $query="SELECT * FROM instituciones order by nombre"; 
-							$result = mysqli_query($conexion, $query);?>
-                            <select data-placeholder="Seleccione instituci&oacute;n..." class="select-search"
-                            tabindex="3" id="institucion" name="institucion" required>
-                                <option value=""></option>
-                            <?PHP while($inst=mysqli_fetch_assoc($result)){?>
-                                <option value="<?PHP echo $inst['id']; ?>">
-                                 <?PHP echo utf8_encode($inst["nombre"]);?></option>
-                            <?PHP }?>    
-                            </select>
-                            <!-- input type="text" class="form-control" placeholder="Nueva Institucion" name="nuevainst" -->
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                           <label class="col-sm-2 control-label">Obra Social: </label>
-                           <div class="col-md-3">
-                            <?PHP include('funciones/conexion.php');                                    
-                            $query2="SELECT * FROM obras_sociales order by nombre";
-							$result2 = mysqli_query($conexion, $query2);?>
-                            <select data-placeholder="Seleccione Obra Social..." class="select-search" tabindex="4"
-                            name="os"  id="os" required>
-                                <option value=""></option>
-                            <?PHP while($inst=mysqli_fetch_assoc($result2)){?>
-                                <option value="<?PHP echo $inst['id']; ?>">
-                                 <?PHP echo utf8_encode($inst["nombre"]);?></option>
-                            <?PHP }?>    
-                            </select>
-                            <!-- input type="text" class="form-control" placeholder="Nueva Obra Social" name="nuevaos" -->
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                           <label class="col-sm-2 control-label">Coseguro: </label>
-                           <div class="col-md-3">
-                            <?PHP include('funciones/conexion.php');                                    
-                            $query2="SELECT * FROM coseguros order by nombre";
-							$result2 = mysqli_query($conexion, $query2);?>
-                            <select data-placeholder="Seleccione Coseguro..." class="select-search" tabindex="4"
-                            name="cos" id="cos" required>
-                                <option selected value="1"></option>
-                            <?PHP while($inst=mysqli_fetch_assoc($result2)){?>
-                                <option value="<?PHP echo $inst['id']; ?>">
-                                 <?PHP echo utf8_encode($inst["nombre"]);?></option>
-                            <?PHP }?>    
-                            </select>
-                            
-                            </div>
-                        </div>
-						
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Instituci&oacute;n: </label>
+							<div class="col-md-3">
+								<?PHP include('funciones/conexion.php');
+								$query = "SELECT * FROM instituciones order by nombre";
+								$result = mysqli_query($conexion, $query); ?>
+								<select data-placeholder="Seleccione instituci&oacute;n..." class="select-search" tabindex="3" id="institucion" name="institucion" required>
+									<option value=""></option>
+									<?PHP while ($inst = mysqli_fetch_assoc($result)) { ?>
+										<option value="<?PHP echo $inst['id']; ?>">
+											<?PHP echo utf8_encode($inst["nombre"]); ?></option>
+									<?PHP } ?>
+								</select>
+								<!-- input type="text" class="form-control" placeholder="Nueva Institucion" name="nuevainst" -->
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Obra Social: </label>
+							<div class="col-md-3">
+								<?PHP include('funciones/conexion.php');
+								$query2 = "SELECT * FROM obras_sociales order by nombre";
+								$result2 = mysqli_query($conexion, $query2); ?>
+								<select data-placeholder="Seleccione Obra Social..." class="select-search" tabindex="4" name="os" id="os" required>
+									<option value=""></option>
+									<?PHP while ($inst = mysqli_fetch_assoc($result2)) { ?>
+										<option value="<?PHP echo $inst['id']; ?>">
+											<?PHP echo utf8_encode($inst["nombre"]); ?></option>
+									<?PHP } ?>
+								</select>
+								<!-- input type="text" class="form-control" placeholder="Nueva Obra Social" name="nuevaos" -->
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Coseguro: </label>
+							<div class="col-md-3">
+								<?PHP include('funciones/conexion.php');
+								$query2 = "SELECT * FROM coseguros order by nombre";
+								$result2 = mysqli_query($conexion, $query2); ?>
+								<select data-placeholder="Seleccione Coseguro..." class="select-search" tabindex="4" name="cos" id="cos" required>
+									<option selected value="1"></option>
+									<?PHP while ($inst = mysqli_fetch_assoc($result2)) { ?>
+										<option value="<?PHP echo $inst['id']; ?>">
+											<?PHP echo utf8_encode($inst["nombre"]); ?></option>
+									<?PHP } ?>
+								</select>
+
+							</div>
+						</div>
+
 						<div class="form-group">
 							<label class="col-sm-2 control-label">N&uacute;mero de Documento: </label>
 							<div class="col-sm-10">
 								<div class="row">
 									<div class="col-md-2">
-									<input type="text" class="form-control" maxlength="8" placeholder="N&uacute;mero de DNI"
-									name="dni" id="dni" tabindex="1">
+										<input type="text" class="form-control" maxlength="8" placeholder="N&uacute;mero de DNI" name="dni" id="dni" tabindex="1">
 									</div>
-								</div>	
+								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Paciente: </label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" placeholder="Apellido y Nombre" id="paciente" name="paciente" tabindex="5"
-                                onkeyup="javascript:this.value=this.value.toUpperCase();" required> 
+								<input type="text" class="form-control" placeholder="Apellido y Nombre" id="paciente" name="paciente" tabindex="5" onkeyup="javascript:this.value=this.value.toUpperCase();" required>
 							</div>
 						</div>
-                        
-                        <div class="form-group">
+
+						<div class="form-group">
 							<label class="col-sm-2 control-label">Recargos: </label>
 							<div class="col-sm-10">
 								<div class="block-inner">
@@ -310,40 +309,40 @@ checkbox:focus {
 									<label class="checkbox-inline checkbox-primary">
 										&#60; 3: <input type="checkbox" class="styled" id="rec_men3" name="rec_men3" tabindex="7">
 									</label>
-    
-                                    <label class="checkbox-inline checkbox-primary">
+
+									<label class="checkbox-inline checkbox-primary">
 										Urgencia: <input type="checkbox" class="styled" id="rec_urg" name="rec_urg" tabindex="8">
 									</label>
-  
-                                    <label class="checkbox-inline checkbox-primary">
+
+									<label class="checkbox-inline checkbox-primary">
 										Fin de Semana: <input type="checkbox" class="styled" id="rec_fds" name="rec_fds" tabindex="9">
 									</label>
-  
-                                    <label class="checkbox-inline checkbox-primary">
+
+									<label class="checkbox-inline checkbox-primary">
 										Feriado: <input type="checkbox" class="styled" id="rec_fer" name="rec_fer" tabindex="10">
 									</label>
-  
-                                    <label class="checkbox-inline checkbox-primary">
+
+									<label class="checkbox-inline checkbox-primary">
 										Nocturno: <input type="checkbox" class="styled" id="rec_noc" name="rec_noc" tabindex="11">
 									</label>
 								</div>
 							</div>
 						</div>
-                        
+
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Observaci&oacute;n: </label>
 							<div class="col-sm-10">
 								<textarea rows="5" cols="5" class="form-control" placeholder="Detalle" id="observ" name="observ" tabindex="12"></textarea>
 							</div>
 						</div>
-                        <?PHP /* defined('fn',"")*/?>
-                        <input type="hidden" id="fn" name="fn"  value="prac_main_a"/>
-                        <?PHP /* defined('alta_usu',"") */?>
-    					<input type="hidden" id="alta_usu" name="alta_usu" value="<?PHP echo $_SESSION['sesion_UserId'];?>"/>
+						<?PHP /* defined('fn',"")*/ ?>
+						<input type="hidden" id="fn" name="fn" value="prac_main_a" />
+						<?PHP /* defined('alta_usu',"") */ ?>
+						<input type="hidden" id="alta_usu" name="alta_usu" value="<?PHP echo $_SESSION['sesion_UserId']; ?>" />
 						<div class="form-actions text-right">
-                        <input type="reset" value="Cancelar" onClick="location.replace('practicas_periodos.php');" class="btn btn-danger">
-                       	<input type="submit" value="Guardar y Continuar" class="btn btn-primary">
-                        </div>
+							<input type="reset" value="Cancelar" onClick="location.replace('practicas_periodos.php');" class="btn btn-danger">
+							<input type="submit" value="Guardar y Continuar" class="btn btn-primary">
+						</div>
 					</div>
 				</div>
 				<!-- /basic inputs -->
@@ -352,11 +351,13 @@ checkbox:focus {
 			<!-- /form components -->
 
 
-	        <!-- Footer -->
-	        <div class="footer clearfix">
-		        <div class="pull-left">&copy; <script>document.write(new Date().getFullYear());</script> <a href="#">Mario De los Rios</a></div>
-	        </div>
-	        <!-- /footer -->
+			<!-- Footer -->
+			<div class="footer clearfix">
+				<div class="pull-left">&copy; <script>
+						document.write(new Date().getFullYear());
+					</script> <a href="#">Mario De los Rios</a></div>
+			</div>
+			<!-- /footer -->
 
 
 		</div>
@@ -365,4 +366,5 @@ checkbox:focus {
 	</div>
 	<!-- /content -->
 </body>
+
 </html>
